@@ -2,10 +2,18 @@ package structures;
 
 public class ListNode {
     private int data;
-    private ListNode next;
+    private ListNode next, prev;
 
-    public ListNode(int data) {
+    public ListNode() {
+        next = null;
+        prev = null;
+        data = 0;
+    }
+
+    public ListNode(int data, ListNode next, ListNode prev) {
         this.data = data;
+        this.next = next;
+        this.prev = prev;
     }
 
     public int getData() {
@@ -22,5 +30,13 @@ public class ListNode {
 
     public void setNext(ListNode next) {
         this.next = next;
+    }
+
+    public ListNode getPrev() {
+        return prev;
+    }
+
+    public void setPrev(ListNode prev) {
+        this.prev = prev;
     }
 }
