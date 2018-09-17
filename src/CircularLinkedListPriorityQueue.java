@@ -1,8 +1,8 @@
-import structures.LinkedList;
+import structures.CircularLinkedList;
 
-public class LinkedListPriorityQueue implements PriorityQueue {
+public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
-    private LinkedList list;
+    private CircularLinkedList list;
 
     @Override
     public void enqueue(int number) {
