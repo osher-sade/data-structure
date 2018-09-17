@@ -2,7 +2,7 @@ public interface PriorityQueue {
 
     void enqueue(int number);
 
-    void dequeue(int number);
+    void dequeue();
 
     boolean isEmpty();
 }

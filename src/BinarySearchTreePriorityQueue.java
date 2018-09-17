@@ -10,7 +10,7 @@ public class BinarySearchTreePriorityQueue implements PriorityQueue {
     }
 
     @Override
-    public void dequeue(int number) {
+    public void dequeue() {
 
     }
 
