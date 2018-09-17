@@ -1,10 +1,10 @@
 package structures;
 
-public class Node {
+public class ListNode {
     private int data;
-    private Node next;
+    private ListNode next;
 
-    public Node(int data) {
+    public ListNode(int data) {
         this.data = data;
     }
 
@@ -16,11 +16,11 @@ public class Node {
         this.data = data;
     }
 
-    public Node getNext() {
+    public ListNode getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(ListNode next) {
         this.next = next;
     }
 }
