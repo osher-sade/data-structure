@@ -16,6 +16,6 @@ public class BinarySearchTreePriorityQueue implements PriorityQueue {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return binarySearchTree.getRoot() == null;
     }
 }
