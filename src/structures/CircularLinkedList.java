@@ -117,4 +117,16 @@ public class CircularLinkedList {
     public int getSize() {
         return size;
     }
+
+    public void setStart(ListNode start) {
+        this.start = start;
+    }
+
+    public void setEnd(ListNode end) {
+        this.end = end;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 }
