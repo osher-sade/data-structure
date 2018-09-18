@@ -6,16 +6,24 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
     @Override
     public void enqueue(int number) {
-
+        if (list.getStart() == null) {
+            list.insertAtStart(number);
+        } else {
+            list.insertAtEnd(number);
+        }
     }
 
     @Override
-    public void dequeue() {
-
+    public int dequeue() throws UnderflowException {
+        if (isEmpty()) {
+            throw new UnderflowException();
+        } else {
+            return 0;
+        }
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return list.isEmpty();
     }
 }
