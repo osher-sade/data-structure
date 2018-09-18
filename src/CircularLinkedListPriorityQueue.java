@@ -5,6 +5,10 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
     private CircularLinkedList list;
 
+    public CircularLinkedListPriorityQueue() {
+        list = new CircularLinkedList();
+    }
+
     @Override
     public void enqueue(int number) {
         if (list.getStart() == null) {
@@ -52,5 +56,9 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
             newNode.setNext(current.getNext());
             current.setNext(newNode);
         }
+    }
+
+    public void print() {
+        list.print();
     }
 }
