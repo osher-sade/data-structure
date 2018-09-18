@@ -6,7 +6,7 @@ public class BinarySearchTree {
     private BinaryTreeNode root;
 
     //Constructor
-    public BinarySearchTree(BinaryTreeNode root) { this.root = root; }
+    public BinarySearchTree() { }
 
     //Getters
     public BinaryTreeNode getRoot() { return root; }
@@ -32,7 +32,7 @@ public class BinarySearchTree {
 
     public boolean IsEmpty() { return this.root == null; }
 
-    public void PrintTree(BinaryTreeNode node)
+    private void PrintTree(BinaryTreeNode node)
     {
         if (node != null) {
             PrintTree(node.getRight());
