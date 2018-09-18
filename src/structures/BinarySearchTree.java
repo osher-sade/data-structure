@@ -6,8 +6,6 @@ public class BinarySearchTree {
     private BinaryTreeNode root;
 
     //Constructor
-    public BinarySearchTree(){ this.root = null; }
-
     public BinarySearchTree(BinaryTreeNode root) { this.root = root; }
 
     //Getters
@@ -32,11 +30,6 @@ public class BinarySearchTree {
         return currentNode;
     }
 
-    public void Delete(BinaryTreeNode nodeToDelete)
-    {
-
-    }
-
     public void PrintTree(BinaryTreeNode node)
     {
         if (node != null) {
@@ -45,5 +38,4 @@ public class BinarySearchTree {
             PrintTree(node.getLeft());
         }
     }
-
 }

@@ -11,9 +11,9 @@ public class BinaryTreeNode {
     //Constructor
     public BinaryTreeNode(int value, BinaryTreeNode father) {
         this.value = value;
+        this.father = father;
         this.left = null;
         this.right = null;
-        this.father = null;
     }
 
     //Getters
@@ -26,8 +26,6 @@ public class BinaryTreeNode {
     public BinaryTreeNode getFather() { return father; }
 
     //Setters
-    public void setValue(int value) { this.value = value; }
-
     public void setLeft(BinaryTreeNode left) { this.left = left; }
 
     public void setRight(BinaryTreeNode right) { this.right = right; }

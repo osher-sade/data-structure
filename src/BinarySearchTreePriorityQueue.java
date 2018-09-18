@@ -1,4 +1,5 @@
 import structures.BinarySearchTree;
+import structures.BinaryTreeNode;
 
 public class BinarySearchTreePriorityQueue implements PriorityQueue {
 
@@ -7,16 +8,37 @@ public class BinarySearchTreePriorityQueue implements PriorityQueue {
 
     @Override
     public void enqueue(int number) {
-        binarySearchTree.setRoot(binarySearchTree.Insert(binarySearchTree.getRoot(), null, number));
+        this.binarySearchTree.setRoot(this.binarySearchTree.Insert(this.binarySearchTree.getRoot(), null, number));
     }
 
     @Override
-    public int dequeue() {
-        return 0;
+    public int dequeue() throws UnderflowException {
+        if(isEmpty()){
+            throw new UnderflowException();
+        }
+
+        BinaryTreeNode currentNode = this.binarySearchTree.getRoot();
+
+        while(currentNode.getRight() != null) {
+            currentNode = currentNode.getRight();
+        }
+
+        if(currentNode.getFather() == null) {
+            this.binarySearchTree.setRoot(currentNode.getLeft());
+        }
+        else {
+            if(currentNode.getLeft() == null) {
+                currentNode.setRight(null);
+            }
+            else {
+                currentNode.getLeft().setFather(currentNode.getFather());
+                currentNode.getFather().setRight(currentNode.getLeft());
+            }
+        }
+
+        return currentNode.getValue();
     }
 
     @Override
-    public boolean isEmpty() {
-        return binarySearchTree.getRoot() == null;
-    }
+    public boolean isEmpty() { return binarySearchTree.getRoot() == null; }
 }
