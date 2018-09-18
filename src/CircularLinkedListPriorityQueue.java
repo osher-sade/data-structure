@@ -50,7 +50,7 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
             newNode.setNext(list.getStart());
             list.setStart(newNode);
         } else {
-            while (current.getNext() != list.getStart() && current.getNext().getData() < newNode.getData()) {
+            while (current.getNext() != list.getStart() && current.getNext().getData() >= newNode.getData()) {
                 current = current.getNext();
             }
 

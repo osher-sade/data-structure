@@ -7,7 +7,7 @@ public class Main {
             int number = (int)(Math.random() * 1000 + 1);
             System.out.println("the random number is : " + number);
             listPriorityQueue.enqueue(number);
-            //treePriorityQueue.enqueue(number);
+            treePriorityQueue.enqueue(number);
         }
 
         while(!listPriorityQueue.isEmpty())
