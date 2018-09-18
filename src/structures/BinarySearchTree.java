@@ -8,14 +8,17 @@ public class BinarySearchTree {
     //Constructor
     public BinarySearchTree(){ this.root = null; }
 
+    public BinarySearchTree(BinaryTreeNode root) { this.root = root; }
+
     //Getters
     public BinaryTreeNode getRoot() { return root; }
 
     //Setters
     public void setRoot(BinaryTreeNode root) { this.root = root; }
 
-    //Methods
-    public BinaryTreeNode Insert(BinaryTreeNode currentNode, BinaryTreeNode father, int value){
+    //Public Methods
+    public BinaryTreeNode Insert(BinaryTreeNode currentNode, BinaryTreeNode father, int value)
+    {
         if(currentNode == null) {
             return new BinaryTreeNode(value, father);
         }
@@ -29,7 +32,18 @@ public class BinarySearchTree {
         return currentNode;
     }
 
-    public void Delete(BinaryTreeNode nodeToDelete){
+    public void Delete(BinaryTreeNode nodeToDelete)
+    {
 
     }
+
+    public void PrintTree(BinaryTreeNode node)
+    {
+        if (node != null) {
+            PrintTree(node.getRight());
+            System.out.print(" " + node.getValue());
+            PrintTree(node.getLeft());
+        }
+    }
+
 }

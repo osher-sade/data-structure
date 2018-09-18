@@ -1,3 +1,5 @@
+import structures.BinarySearchTree;
+import structures.BinaryTreeNode;
 import structures.CircularLinkedList;
 
 public class Main {
@@ -12,5 +14,14 @@ public class Main {
         System.out.println("size: " + list.getSize());
         System.out.println("start: " + list.getStart().getData());
         System.out.println("end: " + list.getEnd().getData());
+
+        //--------------------------------------------------------
+        BinarySearchTree tree = new BinarySearchTree(new BinaryTreeNode(3, null));
+        tree.Insert(tree.getRoot(), null, 2);
+        tree.Insert(tree.getRoot(), null, 6);
+        tree.Insert(tree.getRoot(), null, 4);
+        tree.Insert(tree.getRoot(), null, 7);
+        tree.Insert(tree.getRoot(), null, 5);
+        tree.PrintTree(tree.getRoot());
     }
 }
