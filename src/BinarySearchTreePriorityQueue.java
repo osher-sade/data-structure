@@ -6,6 +6,9 @@ public class BinarySearchTreePriorityQueue implements PriorityQueue {
     //Data Members
     private BinarySearchTree binarySearchTree;
 
+    //Constructor
+    public BinarySearchTreePriorityQueue() { this.binarySearchTree = new BinarySearchTree(); }
+
     @Override
     public void enqueue(int number) {
         this.binarySearchTree.setRoot(this.binarySearchTree.Insert(this.binarySearchTree.getRoot(), null, number));
