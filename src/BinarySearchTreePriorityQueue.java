@@ -40,5 +40,5 @@ public class BinarySearchTreePriorityQueue implements PriorityQueue {
     }
 
     @Override
-    public boolean isEmpty() { return binarySearchTree.getRoot() == null; }
+    public boolean isEmpty() { return binarySearchTree.IsEmpty(); }
 }

@@ -30,6 +30,8 @@ public class BinarySearchTree {
         return currentNode;
     }
 
+    public boolean IsEmpty() { return this.root == null; }
+
     public void PrintTree(BinaryTreeNode node)
     {
         if (node != null) {
