@@ -26,7 +26,7 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
             throw new UnderflowException();
         } else {
             ListNode node = list.getStart();
-            list.deleteAtIndex(0);
+            list.deleteAtPosition(1);
             return node.getData();
         }
     }
@@ -41,20 +41,24 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
         if (current == null) {
             newNode.setNext(newNode);
+//            newNode.setPrev(newNode);
             list.setStart(newNode);
         } else if (current.getData() < newNode.getData()) {
             while (current.getNext() != list.getStart()) {
                 current = current.getNext();
             }
             current.setNext(newNode);
+//            newNode.setPrev(current);
             newNode.setNext(list.getStart());
             list.setStart(newNode);
+//            list.getStart().setPrev(newNode);
         } else {
             while (current.getNext() != list.getStart() && current.getNext().getData() >= newNode.getData()) {
                 current = current.getNext();
             }
 
             newNode.setNext(current.getNext());
+            //current.getNext().setPrev(newNode);
             current.setNext(newNode);
         }
     }

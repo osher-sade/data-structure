@@ -15,42 +15,45 @@ public class CircularLinkedList {
         return start == null;
     }
 
-    public void insertAtStart(int value) {
-        ListNode node = new ListNode(value, null, null);
+    public void insertAtStart(int number) {
+        ListNode nptr = new ListNode(number, null, null);
         if (start == null) {
-            node.setNext(node);
-            node.setPrev(node);
-            start = node;
+            nptr.setNext(nptr);
+            nptr.setPrev(nptr);
+            start = nptr;
             end = start;
         } else {
-            node.setPrev(end);
-            end.setNext(node);
-            start.setPrev(node);
-            node.setNext(start);
-            start = node;
+            nptr.setPrev(end);
+            end.setNext(nptr);
+            start.setPrev(nptr);
+            nptr.setNext(start);
+            start = nptr;
         }
         size++;
     }
 
-    public void insertAtEnd(int val) {
-        ListNode node = new ListNode(val, null, null);
-        if (start == null) {
-            node.setNext(node);
-            node.setPrev(node);
-            start = node;
-            end = start;
-        } else {
-            node.setPrev(end);
-            end.setNext(node);
-            start.setPrev(node);
-            node.setNext(start);
-            end = node;
+    public void insertAtPosition(int number, int position) {
+        ListNode nptr = new ListNode(number, null, null);
+        if (position == 1) {
+            insertAtStart(number);
+            return;
+        }
+        ListNode ptr = start;
+        for (int i = 2; i <= size; i++) {
+            if (i == position) {
+                ListNode temp = ptr.getNext();
+                ptr.setNext(nptr);
+                nptr.setPrev(ptr);
+                nptr.setNext(temp);
+                temp.setPrev(nptr);
+            }
+            ptr = ptr.getNext();
         }
         size++;
     }
 
-    public void deleteAtIndex(int index) {
-        if (index == 1) {
+    public void deleteAtPosition(int position) {
+        if (position == 1) {
             if (size == 1) {
                 start = null;
                 end = null;
@@ -64,7 +67,7 @@ public class CircularLinkedList {
             return;
         }
 
-        if (index == size) {
+        if (position == size) {
             end = end.getPrev();
             end.setNext(start);
             start.setPrev(end);
@@ -74,7 +77,7 @@ public class CircularLinkedList {
 
         ListNode ptr = start.getNext();
         for (int i = 2; i <= size; i++) {
-            if (i == index) {
+            if (i == position) {
                 ListNode p = ptr.getPrev();
                 ListNode n = ptr.getNext();
 
