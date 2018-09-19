@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         CircularLinkedListPriorityQueue listPriorityQueue = new CircularLinkedListPriorityQueue();
         BinarySearchTreePriorityQueue treePriorityQueue = new BinarySearchTreePriorityQueue();
-        System.out.println("The random generated number are : ");
+        System.out.println("The random generated numbers are: ");
         for (int i = 0; i < 50; i++) {
             int number = (int) (Math.random() * 1000 + 1);
             System.out.println(number);
