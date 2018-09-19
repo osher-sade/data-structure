@@ -16,7 +16,6 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
         } else {
             ListNode node = new ListNode(number);
             sortedInsert(node);
-            list.setSize(list.getSize() + 1);
         }
     }
 
@@ -37,30 +36,47 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
     }
 
     private void sortedInsert(ListNode newNode) {
-        ListNode current = list.getStart();
-
-        if (current == null) {
+        ListNode tmp, ptr;
+        boolean insert = false;
+        if (list.getStart() == null) {
             newNode.setNext(newNode);
-//            newNode.setPrev(newNode);
+            newNode.setPrev(newNode);
             list.setStart(newNode);
-        } else if (current.getData() < newNode.getData()) {
-            while (current.getNext() != list.getStart()) {
-                current = current.getNext();
-            }
-            current.setNext(newNode);
-//            newNode.setPrev(current);
+            list.setEnd(newNode);
+        } else if (newNode.getData() >= list.getStart().getData()) {
+            newNode.setPrev(list.getEnd());
+            list.getEnd().setNext(newNode);
+            list.getStart().setPrev(newNode);
             newNode.setNext(list.getStart());
             list.setStart(newNode);
-//            list.getStart().setPrev(newNode);
+        } else if (newNode.getData() <= list.getEnd().getData()) {
+            list.getEnd().setNext(newNode);
+            newNode.setPrev(list.getEnd());
+            newNode.setNext(list.getStart());
+            list.getStart().setPrev(newNode);
+            list.setEnd(newNode);
         } else {
-            while (current.getNext() != list.getStart() && current.getNext().getData() >= newNode.getData()) {
-                current = current.getNext();
+            tmp = list.getStart();
+            ptr = list.getStart().getNext();
+            while (ptr != null) {
+                if (newNode.getData() <= tmp.getData() && newNode.getData() >= ptr.getData()) {
+                    tmp.setNext(newNode);
+                    newNode.setPrev(tmp);
+                    newNode.setNext(ptr);
+                    ptr.setPrev(newNode);
+                    insert = true;
+                    break;
+                } else {
+                    tmp = ptr;
+                    ptr = ptr.getNext();
+                }
             }
-
-            newNode.setNext(current.getNext());
-            //current.getNext().setPrev(newNode);
-            current.setNext(newNode);
+            if (!insert) {
+                tmp.setNext(newNode);
+                newNode.setPrev(tmp);
+            }
         }
+        list.setSize(list.getSize() + 1);
     }
 
     public void print() {
