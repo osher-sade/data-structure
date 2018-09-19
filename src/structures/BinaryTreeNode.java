@@ -1,5 +1,9 @@
 package structures;
-
+/*
+מגישים :
+איתי קליין - 318308053
+אושר שדה - 208426213
+ */
 public class BinaryTreeNode {
 
     private int value;

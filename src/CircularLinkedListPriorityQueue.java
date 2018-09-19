@@ -1,6 +1,10 @@
 import structures.CircularLinkedList;
 import structures.ListNode;
-
+/*
+מגישים :
+איתי קליין - 318308053
+אושר שדה - 208426213
+ */
 public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
     private CircularLinkedList list;

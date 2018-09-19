@@ -1,3 +1,8 @@
+/*
+מגישים :
+איתי קליין - 318308053
+אושר שדה - 208426213
+ */
 public interface PriorityQueue {
 
     void enqueue(int number);

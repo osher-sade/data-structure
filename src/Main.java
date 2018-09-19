@@ -1,3 +1,8 @@
+/*
+מגישים :
+איתי קליין - 318308053
+אושר שדה - 208426213
+ */
 public class Main {
     public static void main(String[] args) {
         CircularLinkedListPriorityQueue listPriorityQueue = new CircularLinkedListPriorityQueue();

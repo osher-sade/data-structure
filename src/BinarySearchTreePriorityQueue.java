@@ -1,6 +1,10 @@
 import structures.BinarySearchTree;
 import structures.BinaryTreeNode;
-
+/*
+מגישים :
+איתי קליין - 318308053
+אושר שדה - 208426213
+ */
 public class BinarySearchTreePriorityQueue implements PriorityQueue {
 
     private BinarySearchTree binarySearchTree;
