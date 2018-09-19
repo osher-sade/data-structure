@@ -3,10 +3,8 @@ import structures.BinaryTreeNode;
 
 public class BinarySearchTreePriorityQueue implements PriorityQueue {
 
-    //Data Members
     private BinarySearchTree binarySearchTree;
 
-    //Constructor
     public BinarySearchTreePriorityQueue() { this.binarySearchTree = new BinarySearchTree(); }
 
     @Override

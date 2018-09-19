@@ -2,19 +2,14 @@ package structures;
 
 public class BinarySearchTree {
 
-    // Data Members
     private BinaryTreeNode root;
 
-    //Constructor
     public BinarySearchTree() { }
 
-    //Getters
     public BinaryTreeNode getRoot() { return root; }
 
-    //Setters
     public void setRoot(BinaryTreeNode root) { this.root = root; }
 
-    //Public Methods
     public BinaryTreeNode Insert(BinaryTreeNode currentNode, BinaryTreeNode father, int value)
     {
         if(currentNode == null) {
@@ -31,13 +26,4 @@ public class BinarySearchTree {
     }
 
     public boolean IsEmpty() { return this.root == null; }
-
-    private void PrintTree(BinaryTreeNode node)
-    {
-        if (node != null) {
-            PrintTree(node.getRight());
-            System.out.print(" " + node.getValue());
-            PrintTree(node.getLeft());
-        }
-    }
 }

@@ -1,6 +1,7 @@
 package structures;
 
 public class CircularLinkedList {
+
     private ListNode start;
     private ListNode end;
     private int size;
@@ -28,26 +29,6 @@ public class CircularLinkedList {
             start.setPrev(nptr);
             nptr.setNext(start);
             start = nptr;
-        }
-        size++;
-    }
-
-    public void insertAtPosition(int number, int position) {
-        ListNode nptr = new ListNode(number, null, null);
-        if (position == 1) {
-            insertAtStart(number);
-            return;
-        }
-        ListNode ptr = start;
-        for (int i = 2; i <= size; i++) {
-            if (i == position) {
-                ListNode temp = ptr.getNext();
-                ptr.setNext(nptr);
-                nptr.setPrev(ptr);
-                nptr.setNext(temp);
-                temp.setPrev(nptr);
-            }
-            ptr = ptr.getNext();
         }
         size++;
     }
@@ -88,25 +69,6 @@ public class CircularLinkedList {
             }
             ptr = ptr.getNext();
         }
-    }
-
-    public void print() {
-        ListNode ptr;
-        if (size == 0) {
-            System.out.println("empty");
-            return;
-        }
-        if (start.getNext() == start) {
-            System.out.println(start.getData() + " ↩ ");
-            return;
-        }
-        System.out.print(start.getData() + " ⇄ ");
-        ptr = start.getNext();
-        while (ptr.getNext() != start) {
-            System.out.print(ptr.getData() + " ⇄ ");
-            ptr = ptr.getNext();
-        }
-        System.out.println(ptr.getData() + " ↩ ");
     }
 
     public ListNode getStart() {

@@ -21,13 +21,12 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
     @Override
     public int dequeue() throws UnderflowException {
-        if (isEmpty()) {
+        if (isEmpty())
             throw new UnderflowException();
-        } else {
-            ListNode node = list.getStart();
-            list.deleteAtPosition(1);
-            return node.getData();
-        }
+
+        ListNode node = list.getStart();
+        list.deleteAtPosition(1);
+        return node.getData();
     }
 
     @Override
@@ -77,9 +76,5 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
             }
         }
         list.setSize(list.getSize() + 1);
-    }
-
-    public void print() {
-        list.print();
     }
 }

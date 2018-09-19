@@ -1,14 +1,9 @@
 package structures;
 
 public class ListNode {
+
     private int data;
     private ListNode next, prev;
-
-    public ListNode() {
-        next = null;
-        prev = null;
-        data = 0;
-    }
 
     public ListNode(int data) {
         next = null;
@@ -26,13 +21,7 @@ public class ListNode {
         return data;
     }
 
-    public void setData(int data) {
-        this.data = data;
-    }
-
-    public ListNode getNext() {
-        return next;
-    }
+    public ListNode getNext() { return next; }
 
     public void setNext(ListNode next) {
         this.next = next;
