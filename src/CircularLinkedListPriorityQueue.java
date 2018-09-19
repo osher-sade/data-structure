@@ -37,12 +37,7 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
     private void sortedInsert(ListNode newNode) {
         ListNode tmp, ptr;
         boolean insert = false;
-        if (list.getStart() == null) {
-            newNode.setNext(newNode);
-            newNode.setPrev(newNode);
-            list.setStart(newNode);
-            list.setEnd(newNode);
-        } else if (newNode.getData() >= list.getStart().getData()) {
+        if (newNode.getData() >= list.getStart().getData()) {
             newNode.setPrev(list.getEnd());
             list.getEnd().setNext(newNode);
             list.getStart().setPrev(newNode);
