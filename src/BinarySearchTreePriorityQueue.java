@@ -22,22 +22,16 @@ public class BinarySearchTreePriorityQueue implements PriorityQueue {
 
         BinaryTreeNode currentNode = this.binarySearchTree.getRoot();
 
-        while(currentNode.getRight() != null) {
+        while(currentNode.getRight() != null)
             currentNode = currentNode.getRight();
-        }
 
-        if(currentNode.getFather() == null) {
+        if(currentNode.getFather() == null)
             this.binarySearchTree.setRoot(currentNode.getLeft());
-        }
-        else {
-            if(currentNode.getLeft() == null) {
-                currentNode.setRight(null);
-            }
-            else {
-                currentNode.getLeft().setFather(currentNode.getFather());
-                currentNode.getFather().setRight(currentNode.getLeft());
-            }
-        }
+        else
+            currentNode.getFather().setRight(currentNode.getLeft());
+
+        if(currentNode.getLeft() != null)
+            currentNode.getLeft().setFather(currentNode.getFather());
 
         return currentNode.getValue();
     }
