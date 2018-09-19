@@ -15,18 +15,16 @@ public class Main {
         System.out.println("CircularLinkedListPriorityQueue dequeued numbers: ");
         while (!listPriorityQueue.isEmpty()) {
             try {
-                System.out.println(listPriorityQueue.dequeue());
+                System.out.print(listPriorityQueue.dequeue() + ", ");
             } catch (PriorityQueue.UnderflowException e) {
                 System.out.println(e.getMessage());
             }
         }
 
-        System.out.println("---------------------------------------------------");
-
         System.out.println("BinarySearchTreePriorityQueue dequeued numbers: ");
         while (!treePriorityQueue.isEmpty()) {
             try {
-                System.out.println(treePriorityQueue.dequeue());
+                System.out.print(treePriorityQueue.dequeue() + ", ");
             } catch (PriorityQueue.UnderflowException e) {
                 System.out.println(e.getMessage());
             }
