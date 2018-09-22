@@ -21,7 +21,7 @@ public class CircularLinkedList {
     }
 
     public void insertAtStart(int number) {
-        ListNode nptr = new ListNode(number, null, null);
+        ListNode nptr = new ListNode(number);
         if (start == null) {
             nptr.setNext(nptr);
             nptr.setPrev(nptr);

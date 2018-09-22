@@ -15,7 +15,7 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
 
     @Override
     public void enqueue(int number) {
-        if (list.getStart() == null) {
+        if (isEmpty()) {
             list.insertAtStart(number);
         } else {
             ListNode node = new ListNode(number);

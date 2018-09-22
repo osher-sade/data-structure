@@ -15,12 +15,6 @@ public class ListNode {
         this.data = data;
     }
 
-    public ListNode(int data, ListNode next, ListNode prev) {
-        this.data = data;
-        this.next = next;
-        this.prev = prev;
-    }
-
     public int getData() {
         return data;
     }
