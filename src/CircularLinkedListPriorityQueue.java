@@ -1,5 +1,6 @@
 import structures.CircularLinkedList;
 import structures.ListNode;
+
 /*
 מגישים :
 איתי קליין - 318308053
@@ -16,7 +17,7 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
     @Override
     public void enqueue(int number) {
         if (isEmpty()) {
-            list.insertAtStart(number);
+            list.insert(number);
         } else {
             ListNode node = new ListNode(number);
             sortedInsert(node);
@@ -29,7 +30,7 @@ public class CircularLinkedListPriorityQueue implements PriorityQueue {
             throw new UnderflowException();
 
         ListNode node = list.getStart();
-        list.deleteAtPosition(1);
+        list.delete();
         return node.getData();
     }
 

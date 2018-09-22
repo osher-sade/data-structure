@@ -1,4 +1,5 @@
 package structures;
+
 /*
 מגישים :
 איתי קליין - 318308053
@@ -20,7 +21,7 @@ public class CircularLinkedList {
         return start == null;
     }
 
-    public void insertAtStart(int number) {
+    public void insert(int number) {
         ListNode nptr = new ListNode(number);
         if (start == null) {
             nptr.setNext(nptr);
@@ -37,42 +38,17 @@ public class CircularLinkedList {
         size++;
     }
 
-    public void deleteAtPosition(int position) {
-        if (position == 1) {
-            if (size == 1) {
-                start = null;
-                end = null;
-                size = 0;
-                return;
-            }
-            start = start.getNext();
-            start.setPrev(end);
-            end.setNext(start);
-            size--;
+    public void delete() {
+        if (size == 1) {
+            start = null;
+            end = null;
+            size = 0;
             return;
         }
-
-        if (position == size) {
-            end = end.getPrev();
-            end.setNext(start);
-            start.setPrev(end);
-            size--;
-            return;
-        }
-
-        ListNode ptr = start.getNext();
-        for (int i = 2; i <= size; i++) {
-            if (i == position) {
-                ListNode p = ptr.getPrev();
-                ListNode n = ptr.getNext();
-
-                p.setNext(n);
-                n.setPrev(p);
-                size--;
-                return;
-            }
-            ptr = ptr.getNext();
-        }
+        start = start.getNext();
+        start.setPrev(end);
+        end.setNext(start);
+        size--;
     }
 
     public ListNode getStart() {
